@@ -1,0 +1,15 @@
+{
+  "name": "aureon",
+  "version": "0.0.1",
+  "description": "> Aureon is a local database with a unique sdl for create database structures.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "packages/compiler"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
