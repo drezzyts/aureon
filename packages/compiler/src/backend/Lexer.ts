@@ -77,9 +77,11 @@ export default class Lexer {
             this.next();
           }
 
+          console.log(this.char)
           if(this.char !== '"') throw new SyntaxError('Expected symbol \'"\' to close string literals!')
           
           this.tokens.push(this.tokenize(LexemeType.String, string));
+          this.next();
         } else if(this.isString(this.char)) {
           let identifier = '';
           
@@ -117,19 +119,19 @@ export default class Lexer {
     } catch(error) {
       if(error instanceof DeclarationError){
         const message = `[Aureon]-[Lexer]-[DeclarationError]: ${error.message}\nLine ${this.line} | Column ${this.column}`
-        console.error(message);
+        throw new Error(message);
       }
       if(error instanceof InternalError){
         const message = `[Aureon]-[Lexer]-[InternalError]: ${error.message}\nLine: ${this.line} | Column: ${this.column}`
-        console.error(message);
+        throw new Error(message);
       }
       if(error instanceof CompilerError){
         const message = `[Aureon]-[Lexer]-[CompilerError]: ${error.message}\nLine: ${this.line} | Column: ${this.column}`
-        console.error(message);
+        throw new Error(message);
       }
       if(error instanceof SyntaxError){
         const message = `[Aureon]-[Lexer]-[SyntaxError]: ${error.message}\nLine: ${this.line} | Column: ${this.column}`
-        console.error(message);
+        throw new Error(message);
       }
     }
 
