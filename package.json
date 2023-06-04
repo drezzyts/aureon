@@ -1,15 +1,21 @@
 {
   "name": "aureon",
   "version": "0.0.1",
-  "description": "> Aureon is a local database with a unique sdl for create database structures.",
+  "description": "Aureon is a local database with a unique sdl for create database structures.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "vitest",
+    "dev": "tsx index.ts"
   },
   "workspaces": [
     "packages/compiler"
   ],
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "drezzyts",
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.3",
+    "vitest": "^0.31.4"
+  }
 }

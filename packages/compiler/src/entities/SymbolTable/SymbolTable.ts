@@ -6,8 +6,8 @@ import InternalError from '../Errors/InternalError';
 import Symbol from './Symbol';
 
 export default class SymbolTable {
-  private readonly blocks: Map<string, Symbol[]>;
-  private currentBlock: string | undefined;
+  public readonly blocks: Map<string, Symbol[]>;
+  public currentBlock: string | undefined;
 
   public constructor() {
     this.blocks = new Map();
@@ -23,14 +23,18 @@ export default class SymbolTable {
   }
 
   public enterBlock(id: string) {
-    if(!this.blocks.has(id)) return false; 
+    if(!this.blocks.has(id)) {
+      const err = `There was an attempt to enter into an invalid block!`;
+      throw new InternalError(err, NaN, NaN);
+    }
 
     this.currentBlock = id;
-    return true
+    return true;
   }
 
   public exitBlock() {
     this.currentBlock = undefined;
+    return true;
   }
 
   public insert(inputSymbol: Symbol) {
@@ -65,7 +69,7 @@ export default class SymbolTable {
   public remove(name: string, blockId?: string) {
     blockId ??= this.currentBlock;
     if(!blockId || !this.blocks.has(blockId)) {
-      const err = `There was an attempt to lookup a symbol into an invalid block!`;
+      const err = `There was an attempt to remove a symbol into an invalid block!`;
       throw new InternalError(err, NaN, NaN);
     }
 
