@@ -1,8 +1,19 @@
 export enum LexemeType {
-  Keyword,
-  Delimiter,
-  Operator,
-  EOF,
+  Number,
+  String, 
+
   Identifier,
-  Literal
+  Structure, //structure keyword
+
+  OpenBrace, //{
+  CloseBrace, //}
+  OpenParenthesis, //(
+  CloseParenthesis, //)
+  
+  At, //@
+  Comma, //,
+  Colon, //:
+  SemiColon, //;
+  
+  EOF // End Of File
 }
