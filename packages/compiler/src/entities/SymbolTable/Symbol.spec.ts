@@ -7,7 +7,7 @@ test('create an symbol', () => {
     name: 'id',
     type: 'StructureProperty',
     line: 2,
-    position: 10
+    column: 10
   }
   const symbol = new Symbol(props)
 

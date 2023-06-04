@@ -48,7 +48,7 @@ export default class SymbolTable {
     const fetchSymbol = block.find(symbolData => symbolData.name == inputSymbol.name);
     if(fetchSymbol) {
       const err = `There was an attempt to insert a symbol that already exists!`;
-      throw new DeclarationError(err, inputSymbol.line, inputSymbol.position, inputSymbol.name);
+      throw new DeclarationError(err, inputSymbol.line, inputSymbol.column, inputSymbol.name);
     }
 
     block.push(inputSymbol)

@@ -1,0 +1,1 @@
+export type StructurePropertyType = 'string' | 'number' | 'boolean';

@@ -31,7 +31,7 @@ test('insert an symbol in symbol table block', () => {
     name: 'symbol-test',
     type: 'any', 
     line: 0, 
-    position: 0 
+    column: 0 
   });
 
   table.createBlock('test', 0, 0);
@@ -46,7 +46,7 @@ test('cannot insert an existent symbol in symbol table', () => {
     name: 'symbol-test',
     type: 'any', 
     line: 0, 
-    position: 0 
+    column: 0 
   });
   table.createBlock('test', 0, 0);
   table.enterBlock('test');
@@ -63,7 +63,7 @@ test('cannot insert a symbol into an invalid symbol table block', () => {
     name: 'symbol-test',
     type: 'any', 
     line: 0, 
-    position: 0 
+    column: 0 
   });
 
   expect(() => { 
@@ -78,7 +78,7 @@ test('lookup an symbol in symbol table block', () => {
     name: 'symbol-test',
     type: 'any', 
     line: 0, 
-    position: 0 
+    column: 0 
   });
 
   table.createBlock('test', 0, 0);
@@ -103,7 +103,7 @@ test('remove an symbol in symbol table block', () => {
     name: 'symbol-test',
     type: 'any', 
     line: 0, 
-    position: 0 
+    column: 0 
   });
 
   table.createBlock('test', 0, 0);

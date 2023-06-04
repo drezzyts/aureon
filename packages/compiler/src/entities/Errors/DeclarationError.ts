@@ -3,8 +3,8 @@ import CompilerError from "./CompilerError";
 export default class DeclarationError extends CompilerError {
   identifier: string;
 
-  constructor(message: string, line: number, position: number, identifier: string) {
-    super(message, line, position);
+  constructor(message: string, line: number, column: number, identifier: string) {
+    super(message, line, column);
     this.identifier = identifier;
   }
 }
