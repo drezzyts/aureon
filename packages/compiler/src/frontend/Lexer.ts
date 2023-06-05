@@ -134,7 +134,8 @@ export default class Lexer {
         throw new Error(message);
       }
     }
-
+    
+    this.tokens.push(this.tokenize(LexemeType.EOF, 'EOF'))
     return this.tokens;
   }
 }

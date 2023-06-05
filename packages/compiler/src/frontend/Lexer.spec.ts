@@ -23,6 +23,14 @@ test('create structure with simple property', () => {
   expect(tokens).toBeInstanceOf(Array)
 })
 
+test('create structure with decorated property ', () => {
+  const lexer = new Lexer('structure Users { id string: @identifier; }')
+  const tokens = lexer.lex();
+
+  expect(tokens.length).greaterThan(0)
+  expect(tokens).toBeInstanceOf(Array)
+})
+
 test('invalid symbol error', () => {
   const lexer = new Lexer(']');
   expect(() => {

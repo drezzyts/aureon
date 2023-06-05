@@ -1,0 +1,1 @@
+export type ValueType = 'number' | 'boolean' | 'null' | 'undefined' | 'structure' | 'structure-property'
